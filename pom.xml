@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.exemplo</groupId>
-	<artifactId>gerenciador-estacionamento-veiculos</artifactId>
+	<artifactId>estacionamento</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>gerenciador-estacionamento-veiculos</name>
+	<name>estacionamento</name>
 	<description>Api para gerenciamento de estacionamento de veículos</description>
 	<properties>
 		<java.version>11</java.version>
