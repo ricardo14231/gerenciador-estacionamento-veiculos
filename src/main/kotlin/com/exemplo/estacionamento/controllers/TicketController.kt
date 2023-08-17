@@ -1,6 +1,6 @@
 package com.exemplo.estacionamento.controllers
 
-import com.exemplo.estacionamento.models.TicketModel
+import com.exemplo.estacionamento.dtos.TicketDto
 import com.exemplo.estacionamento.services.TicketService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
@@ -18,12 +18,12 @@ class TicketController {
     lateinit var ticketService: TicketService
 
     @GetMapping(value = ["/list"])
-    fun listAllTickets(ativo: Boolean): ResponseEntity<List<TicketModel>> {
+    fun listAllTickets(ativo: Boolean): ResponseEntity<List<TicketDto>> {
         return ResponseEntity.ok(ticketService.listAllTickets(ativo))
     }
 
     @PostMapping(value = ["/create"])
-    fun createTicket(@RequestBody ticket: TicketModel): ResponseEntity<TicketModel> {
+    fun createTicket(@RequestBody ticket: TicketDto): ResponseEntity<TicketDto> {
         return ResponseEntity.ok(ticketService.createTicket(ticket))
     }
 }

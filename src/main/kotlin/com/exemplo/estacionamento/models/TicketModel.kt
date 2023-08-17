@@ -12,37 +12,37 @@ import java.time.LocalDateTime
 
 @Entity
 @Table(name = "ticket")
-class TicketModel {
+data class TicketModel (
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    val id: Long? = null
+    val id: Long? = null,
 
     @Column(length = 30)
-    var numeroTicket: String = ""
+    var numeroTicket: String = "",
 
     @Column(length = 7)
-    var placa: String = ""
+    var placa: String = "",
 
-    var tipo: TipoVeiculo? = null
-
-    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
-    var horaEntrada: LocalDateTime? = null
+    var tipo: TipoVeiculo? = null,
 
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
-    val horaSaida: LocalDateTime? = null
+    var horaEntrada: LocalDateTime = LocalDateTime.now(),
+
+    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
+    val horaSaida: LocalDateTime? = null,
 
     @Column(length = 50)
-    var valorServico: String = ""
+    var valorServico: String = "",
 
-    var ativo: Boolean = false
+    var ativo: Boolean = true,
 
     @Column(columnDefinition = "TEXT")
-    var observacao: String = ""
+    var observacao: String = "",
 
-    var deletado: Boolean = false
+    var deletado: Boolean = false,
 
-    var updatedAt: LocalDateTime? = null
+    var updatedAt: LocalDateTime? = null,
 
-    val createdAt = LocalDateTime.now()
-}
+    val createdAt: LocalDateTime? = LocalDateTime.now()
+)
